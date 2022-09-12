@@ -1,10 +1,10 @@
-from sorting.number import Number
+from sorting.random_number import RandomNumber
 from file_handlers.write_file import WriteFile
 from utils.utils import get_files_in_folder
 from sorting.sort_numbers import SortNumbers
 
 if __name__ == "__main__":
-    sorted_numbers_for_source_files = Number.create_random_sorted_numbers(
+    sorted_numbers_for_source_files = RandomNumber.generate(
         number_of_files=10,
         min_file_length=1,
         max_file_length=10,

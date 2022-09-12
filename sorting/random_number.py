@@ -1,9 +1,9 @@
 import random
 
 
-class Number:
+class RandomNumber:
     @staticmethod
-    def create_random_sorted_numbers(
+    def generate(
         number_of_files,
         min_file_length,
         max_file_length,

@@ -1,10 +1,10 @@
 import pytest
-from sorting.number import Number
+from sorting.random_number import RandomNumber
 
 
 @pytest.fixture
 def sorted_numbers_for_source_files():
-    sorted_numbers_for_source_files = Number.create_random_sorted_numbers(
+    sorted_numbers_for_source_files = RandomNumber.generate(
         number_of_files=10,
         min_file_length=1,
         max_file_length=10,
