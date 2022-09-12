@@ -1,22 +1,22 @@
 ## How to run the tests?
 
-docker image build -t kl_numbers_task .
+```docker image build -t kl_numbers_task .```
 
-docker run -d --name kl_numbers_task -it kl_numbers_task sh
+```docker run -d --name kl_numbers_task -it kl_numbers_task sh```
 
-docker exec -it kl_numbers_task bash
+```docker exec -it kl_numbers_task bash```
 
-cd tests | pytest -v
+```cd tests | pytest -v```
 
 ## How to run the main code?
 
-docker image build -t kl_numbers_task .
+```docker image build -t kl_numbers_task .```
 
-docker run -d --name kl_numbers_task -it kl_numbers_task sh
+```docker run -d --name kl_numbers_task -it kl_numbers_task sh```
 
-docker exec -it kl_numbers_task bash
+```docker exec -it kl_numbers_task bash```
 
-python main.py
+```python main.py```
 
 you can run "python main.py" multiple times 
 to obtain each time a random sorted list.
@@ -37,7 +37,7 @@ how many numbers were read.
 
 More **test coverage** (not 100%) - e.g. check new source files are created
 
-**Error handling** - e.g. empty files
+**Error handling**
 
 **config file** - input parameters such as number_of_files=10 in configs 
 instead in code

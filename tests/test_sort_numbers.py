@@ -5,7 +5,7 @@ from sorting.sort_numbers import SortNumbers
 
 @pytest.fixture()
 def sort_numbers():
-    source_files = get_files_in_folder(extension="txt", path="/app/tests/source_files")
+    source_files = get_files_in_folder(extension="txt", path="/app/tests/fixture")
     sort_numbers = SortNumbers(
         number_of_files=len(source_files), source_files=source_files
     )
