@@ -33,21 +33,27 @@ class SortNumbers:
 
                 min_num = min(current_numbers)
                 index_min_num = current_numbers.index(min_num)
+
                 self.sorted_numbers.append(min_num)
 
                 current_numbers.pop(index_min_num)
 
-                # last line in file
-                try:
-                    current_numbers.insert(
-                        index_min_num,
-                        float(ReadFile.read_line(self.source_files[index_min_num])),
-                    )
+                self.insert_new_number(current_numbers, index_min_num)
 
-                except ValueError:
-                    self.source_files[index_min_num].close()
-                    self.source_files.pop(index_min_num)
         return self.sorted_numbers
+
+    def insert_new_number(self, current_numbers, index_min_num):
+
+        try:
+            current_numbers.insert(
+                index_min_num,
+                float(ReadFile.read_line(self.source_files[index_min_num])),
+            )
+
+        # if last line, file doesn't go float
+        except ValueError:
+            self.source_files[index_min_num].close()
+            self.source_files.pop(index_min_num)
 
     def print_numbers(self):
         print(self.sorted_numbers)
