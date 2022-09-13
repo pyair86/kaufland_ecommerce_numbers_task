@@ -54,6 +54,6 @@ Better structure of folders and files, e.g. avoid utils
 ## Distribute file reading
 Interesting case, I have an idea which we can gladly discuss
 
-## Last words
+## Final words
 Thank you very much for taking the time to write and to check the task!
 
