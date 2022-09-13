@@ -4,8 +4,7 @@ from file_handlers.open_files import open_files
 from utils.utils import get_files_in_folder
 from sorting.sort_numbers import SortNumbers
 
-# todo add correct length and first and last number sort test
-# todo black
+# gets files in folder
 
 if __name__ == "__main__":
     sorted_numbers_for_source_files = RandomNumber.generate(

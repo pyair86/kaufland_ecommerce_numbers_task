@@ -6,7 +6,7 @@ class SortNumbers:
         self.sorted_numbers = []
         self.source_files = source_files
 
-    def populate_initial_numbers_from_each_file(self,numbers):
+    def populate_initial_numbers_from_each_file(self, numbers):
         if not self.sorted_numbers:
             for j in range(len(self.source_files)):
                 numbers.append(float(ReadFile.read_line(self.source_files[j])))
@@ -39,7 +39,10 @@ class SortNumbers:
 
                 # last line in file
                 try:
-                    current_numbers.insert(index_min_num, float(ReadFile.read_line(self.source_files[index_min_num])))
+                    current_numbers.insert(
+                        index_min_num,
+                        float(ReadFile.read_line(self.source_files[index_min_num])),
+                    )
 
                 except ValueError:
                     self.source_files[index_min_num].close()

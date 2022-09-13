@@ -3,7 +3,7 @@ from sorting.random_number import RandomNumber
 
 
 @pytest.fixture
-def sorted_numbers_for_source_files():
+def generate():
     sorted_numbers_for_source_files = RandomNumber.generate(
         number_of_files=10,
         min_file_length=1,
@@ -15,18 +15,18 @@ def sorted_numbers_for_source_files():
     return sorted_numbers_for_source_files
 
 
-def test_create_random_sorted_numbers_check_correct_length(
-    sorted_numbers_for_source_files,
+def test_generate_random_numbers_check_correct_length(
+    generate,
 ):
     # number of files
-    assert len(sorted_numbers_for_source_files) == 10
+    assert len(generate) == 10
 
 
-def test_create_random_sorted_numbers_check_each_chunk_sorted(
-    sorted_numbers_for_source_files,
+def test_generate_random_numbers_check_each_chunk_sorted(
+    generate,
 ):
     flag = True
-    for chunk in sorted_numbers_for_source_files:
+    for chunk in generate:
         if chunk != sorted(chunk):
             flag = False
             break
