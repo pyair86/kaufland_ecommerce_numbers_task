@@ -31,9 +31,9 @@ I enjoyed running it many times like a fool :D
 3. Remove from list the minimum number and add on the same index a new number from the file with the removed minimum
       number: 
 
-          [0,1,2] --> 0 is min 
+          [0,1,2] --> 0 is min, goes to sorted list
           [1,2]
-          [file1[next_line],1,2] --> is min...
+          [file1[next_line],1,2] --> is min, goes to sorted list...
 4. If no numbers left in the file, close file.
 
 
