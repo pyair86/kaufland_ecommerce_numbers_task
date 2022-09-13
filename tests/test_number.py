@@ -25,9 +25,9 @@ def test_generate_random_numbers_check_correct_length(
 def test_generate_random_numbers_check_each_chunk_sorted(
     generate,
 ):
-    flag = True
+    is_sorted = True
     for chunk in generate:
         if chunk != sorted(chunk):
-            flag = False
+            is_sorted = False
             break
-    assert flag
+    assert is_sorted
