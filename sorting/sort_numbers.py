@@ -6,7 +6,7 @@ class SortNumbers:
         self.sorted_numbers = []
         self.source_files = source_files
 
-    def populate_initial_numbers_from_each_file(self, numbers):
+    def get_one_number_from_each_file(self, numbers):
         if not self.sorted_numbers:
             for j in range(len(self.source_files)):
                 numbers.append(float(ReadFile.read_line(self.source_files[j])))
@@ -27,7 +27,7 @@ class SortNumbers:
 
         for i in range(len(self.source_files)):
 
-            self.populate_initial_numbers_from_each_file(current_numbers)
+            self.get_one_number_from_each_file(current_numbers)
 
             while self.source_files:
 
