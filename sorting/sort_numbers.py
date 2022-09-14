@@ -6,10 +6,10 @@ class SortNumbers:
         self.sorted_numbers = []
         self.source_files = source_files
 
-    def get_one_number_from_each_file(self, numbers):
+    def append_one_number_from_each_file(self, current_numbers_to_check_min_number):
         if not self.sorted_numbers:
             for j in range(len(self.source_files)):
-                numbers.append(float(ReadFile.read_line(self.source_files[j])))
+                current_numbers_to_check_min_number.append(float(ReadFile.read_line(self.source_files[j])))
 
     def sort_elements(self):
 
@@ -23,29 +23,29 @@ class SortNumbers:
         Adds to current_numbers for previous removed index, new number from file that had the minimum number.
         """
 
-        current_numbers = []
+        current_numbers_to_check_min_number = []
 
         for i in range(len(self.source_files)):
 
-            self.get_one_number_from_each_file(current_numbers)
+            self.append_one_number_from_each_file(current_numbers_to_check_min_number)
 
             while self.source_files:
 
-                min_num = min(current_numbers)
-                index_min_num = current_numbers.index(min_num)
+                min_num = min(current_numbers_to_check_min_number)
+                index_min_num = current_numbers_to_check_min_number.index(min_num)
 
                 self.sorted_numbers.append(min_num)
 
-                current_numbers.pop(index_min_num)
+                current_numbers_to_check_min_number.pop(index_min_num)
 
-                self.insert_new_number(current_numbers, index_min_num)
+                self.insert_new_number(current_numbers_to_check_min_number, index_min_num)
 
         return self.sorted_numbers
 
-    def insert_new_number(self, current_numbers, index_min_num):
+    def insert_new_number(self, current_numbers_to_check_min_number, index_min_num):
 
         try:
-            current_numbers.insert(
+            current_numbers_to_check_min_number.insert(
                 index_min_num,
                 float(ReadFile.read_line(self.source_files[index_min_num])),
             )
